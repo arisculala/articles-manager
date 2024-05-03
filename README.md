@@ -7,7 +7,7 @@ The **articles-manager** is a RESTful API service designed to manage articles/bl
      - [Setup PostgreSQL Locally](https://github.com/arisculala/articles-manager#setup-postgresql-locally)
      - [Installation](https://github.com/arisculala/articles-manager#installation)
 
-[References](https://github.com/arisculala/connectme#references)
+[References](https://github.com/arisculala/articles-manager#references)
  
 
 ## Getting Started
