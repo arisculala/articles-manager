@@ -1,0 +1,608 @@
+{
+	"info": {
+		"_postman_id": "0006456f-9adb-4e6e-ae64-17c324dfec28",
+		"name": "articles manager",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15649124"
+	},
+	"item": [
+		{
+			"name": "healthchecks",
+			"item": [
+				{
+					"name": "liveness",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/healthcheck/liveness",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"healthcheck",
+								"liveness"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "readiness",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/healthcheck/readiness",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"healthcheck",
+								"readiness"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"Jhon\",\n    \"lastName\": \"Doe\",\n    \"email\": \"jhondoe@gmail.com\",\n    \"phoneNumber\": \"93921111\",\n    \"password\": \"jhondoe@gmail.com\",\n    \"is2FAEnable\": false,\n    \"profileImage\": \"https://picsum.photos/200/300\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/users",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/users/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "7858adc9-cbd5-4991-9790-13e4e1748007",
+									"uuid": "a118bb89-bf14-402f-b407-a291aef3314e"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Users",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"page\": 1,\n    \"limit\": 10,\n    \"is2FAEnable\": false,\n    \"isDeleted\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/users",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User Password",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"currentPassword\": \"jhondoe111\",\n    \"newPassword\": \"jhondoe111\",\n    \"reEnterNewPassword\": \"jhondoe111\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/users/:id/password",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								":id",
+								"password"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "2c5ffbb1-6ba8-4cb4-8c49-94d98e3019eb",
+									"uuid": "d1e1931c-eb05-460e-9957-277062b8d084"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"Jhon Updated\",\n    \"lastName\": \"Doe Updated\",\n    \"email\": \"jhondoe_updated@gmail.com\",\n    \"phoneNumber\": \"1111111111\",\n    \"profileImage\": \"https://picsum.photos/200/300\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/users/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "7858adc9-cbd5-4991-9790-13e4e1748007",
+									"uuid": "e072ed94-b183-490d-ae59-9a62bef6b523"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User 2FA",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"is2FAEnable\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/users/:id/2fa",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								":id",
+								"2fa"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "ca165f1c-7667-4488-baac-b72ea308fa03",
+									"uuid": "62575a72-6dbf-4a62-82e9-ea349514c9ac"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Restore User",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/users/:id/restore",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								":id",
+								"restore"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "ca165f1c-7667-4488-baac-b72ea308fa03",
+									"uuid": "07e36e82-1826-445e-9d95-7ba798a836a9"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/users/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "ca165f1c-7667-4488-baac-b72ea308fa03",
+									"uuid": "54c6100c-c665-4c6e-95c8-57651ac393e3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"user1@22.com\",\n    \"password\": \"password1password1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/users/login",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "articles",
+			"item": [
+				{
+					"name": "Create Article",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"author\": \"ed2bdbc0-87b9-43d3-937c-7e29ec617a15\",\n    \"image\": \"https://picsum.photos/200\",\n    \"headline\": \"Article 1\",\n    \"subhead\": \"This is article 1\",\n    \"content\": \"This is the content of article 1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/articles",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"articles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Article",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/articles/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"articles",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "a930e3bd-2d53-462a-8058-74ff02365c01",
+									"uuid": "7485d420-7047-432e-9b73-50213e159e70"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Articles",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"page\": 1,\n    \"limit\": 10,\n    \"isDeleted\": false,\n    \"search\": \"article\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/articles",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"articles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Articles By Search (headline, subhead, content)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"page\": 1,\n    \"limit\": 10,\n    \"isDeleted\": false,\n    \"search\": \"article 2\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/articles",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"articles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Articles by Author",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"page\": 1,\n    \"limit\": 10,\n    \"isDeleted\": false,\n    \"author\": \"ed2bdbc0-87b9-43d3-937c-7e29ec617a15\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/articles",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"articles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Article",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"image\": \"https://picsum.photos/200\",\n    \"headline\": \"Article 1 Updated\",\n    \"subhead\": \"This is article 1 subhead updated\",\n    \"content\": \"This is the content of article 1 updated\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/articles/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"articles",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "a930e3bd-2d53-462a-8058-74ff02365c01",
+									"uuid": "e13bae22-a708-4400-963f-e2a5da5e7522"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Article",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/articles/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"articles",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "a930e3bd-2d53-462a-8058-74ff02365c01",
+									"uuid": "94553c74-1eb7-4b7d-a370-e34e8e82fa17"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Restore Article",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/articles/:id/restore",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"articles",
+								":id",
+								"restore"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "a930e3bd-2d53-462a-8058-74ff02365c01",
+									"uuid": "b447d046-14f8-42e3-9d15-ccec8076d648"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
